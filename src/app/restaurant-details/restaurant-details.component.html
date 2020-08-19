@@ -1,0 +1,36 @@
+<div class="m-5">
+  <div class="card" style="width: 100%;">
+
+    <div class="card-body">
+      <div class="card-title">
+        <h1>{{restaurant?.name}} </h1>
+        <h5>{{city}}  <span>{{restaurant?.type}}</span></h5>
+       </div>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+
+      </p>
+      <a routerLink="/restaurant-list" class="btn btn-primary">Go back</a>
+    </div>
+  </div>
+</div>
+<!-- ------------------------Food Items------------------------- -->
+<h1 class="text-center" style="text-transform: uppercase;">{{restaurant?.name}} Restaurant Food Items</h1>
+<div class="row">
+  <div class="col-sm-4" *ngFor="let i of (food)">
+
+    <div class="card" style="width:100%">
+    <img [src]=i.imagePath [alt]=i.name width=100% height=200>
+    <div class="card-body">
+      <div class="card-title"><h4>{{i.name}}
+      </h4></div>
+      <div class="card-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a libero eget arcu convallis fermentum sed eu nibh. Nunc tristique facilisis nisl sit amet posuere. Mauris tempus, velit eu iaculis fermentum, metus tellus tincidunt arcu, vitae tempus quam quam vel augue. Proin eget convallis neque. Quisque pulvinar leo at sapien lobortis, id volutpat nulla rutrum. Quisque pretium scelerisque cursus. In tellus elit, iaculis eget ornare in, pellentesque eu libero. Morbi hendrerit dui in eleifend sollicitudin.
+      <button class="btn btn-danger d-block" (click)="remove(i.food_id)">Delete Food</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+

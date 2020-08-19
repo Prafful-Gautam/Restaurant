@@ -1,0 +1,29 @@
+<h2 class="text-center mt-3">Add Restaurant</h2>
+
+<div class="row mt-5">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+  <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Restaurant Name</label>
+      <input type="text" class="form-control" formControlName="name" id="name">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <select class="form-control" formControlName="city" id="city">
+        <option *ngFor="let i of (states|async)" value="{{i}}">{{i}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="type">Restaurant Type</label>
+      <select class="form-control" id="type" formControlName="type">
+        <option value="Veg">Veg</option>
+        <option value="Non Veg">Non Veg</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
